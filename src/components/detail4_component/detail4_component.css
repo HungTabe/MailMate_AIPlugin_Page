@@ -1,0 +1,128 @@
+/* src/components/Detail4Component.css */
+.detail4-container {
+    background: linear-gradient(135deg, rgb(0 0 0 / 90%), rgba(8, 28, 43, -0.1));    padding: 50px;
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100vh;
+  }
+  
+  .detail4-header {
+    text-align: center;
+  }
+  
+  .main-heading {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .highlight-text {
+    color: #ff6f61; /* Color similar to the highlighted word */
+  }
+  
+  .subheading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .info-text {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  
+  .email-preview {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+  
+  .email-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .emoji {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+  
+  .email-subject {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .email-body p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .calendar-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .calendar-button:hover {
+    background-color: #45a049;
+  }
+  
+  .calendar-view {
+    background-color: #333;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .calendar-day {
+    font-size: 18px;
+  }
+  
+  .calendar-date {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .event {
+    margin-top: 10px;
+  }
+  
+  .event-time {
+    font-weight: bold;
+  }
+  
+  .event-name {
+    color: #ff6f61;
+  }
+  
+  .email-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .email-action {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .email-action:hover {
+    background-color: #45a049;
+  }
+  
