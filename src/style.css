@@ -5,7 +5,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: radial-gradient(circle at bottom, rgb(83 57 101) 0%, rgba(0, 0, 0, 1) 65%);
+    /* background: radial-gradient(circle at bottom, rgb(83 57 101) 0%, rgba(0, 0, 0, 1) 65%); */
     color: #fff;
     height: 100vh;
     display: flex;
