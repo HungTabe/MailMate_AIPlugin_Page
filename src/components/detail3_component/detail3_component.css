@@ -1,0 +1,64 @@
+.detail2-container {
+    background: linear-gradient(135deg, rgb(0 0 0 / 30%), rgba(8, 28, 43, -0.1));    
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100vh;
+  }
+  
+  .detail2-header {
+    text-align: center;
+  }
+  
+  .main-heading {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .subheading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .info-text {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  
+  .email-preview {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+  
+  .email-subject {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .email-body p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .highlight-text {
+    color: #ff6f61;  /* Color similar to the error highlighted word */
+    text-decoration: underline;
+  }
+  
+  .autocorrect-info {
+    margin-top: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    max-width: 400px;
+    margin: 20px auto 0;
+    text-align: center;
+  }
+  
