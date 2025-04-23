@@ -137,7 +137,7 @@ export default function FAQ() {
               gutterBottom
               sx={{ maxWidth: { sm: '100%', md: '70%' } }}
             >
-              Yes, our product comes with a [length of warranty] warranty. It covers
+              Yes, our product comes with a 6 months warranty. It covers
               defects in materials and workmanship. If you encounter any issues
               covered by the warranty, please contact our customer support for
               assistance.

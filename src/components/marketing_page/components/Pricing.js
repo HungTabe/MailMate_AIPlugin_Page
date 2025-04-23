@@ -14,25 +14,26 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: '[Free-Tier] Free',
+    price: 'FREE',
     description: [
-      '10 users included',
-      '2 GB of storage',
+      'Summarize feature',
       'Help center access',
       'Email support',
     ],
-    buttonText: 'Sign up for free',
+    buttonText: 'Contact for free',
     buttonVariant: 'outlined',
     buttonColor: 'primary',
   },
   {
-    title: 'Professional',
+    title: '[Pro-Tier] Professional',
     subheader: 'Recommended',
-    price: '15',
+    price: '49.000',
     description: [
-      '20 users included',
-      '10 GB of storage',
+      'Summarize feature',
+      'Improve Mail Writing feature',
+      'Auto Schedule feature',
+      'Mail Auto ScriptBot feature',
       'Help center access',
       'Priority email support',
       'Dedicated team',
@@ -43,11 +44,14 @@ const tiers = [
     buttonColor: 'secondary',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: '[Business-Tier] Enterprise',
+    price: '79.000',
     description: [
-      '50 users included',
-      '30 GB of storage',
+      'Max power all feature',
+      'Summarize feature',
+      'Improve Mail Writing feature',
+      'Auto Schedule feature',
+      'Mail Auto ScriptBot feature',
       'Help center access',
       'Phone & email support',
     ],
@@ -86,9 +90,8 @@ export default function Pricing() {
           Pricing
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-          Quickly build an effective pricing table for your potential customers with
-          this layout. <br />
-          It&apos;s built with default Material UI components with little
+          Choose one of three available tiers, all of which are available for purchase when you reach out. <br />
+          It&apos;s built with default MAILMate Core components with little
           customization.
         </Typography>
       </Box>
@@ -158,7 +161,7 @@ export default function Pricing() {
                   ]}
                 >
                   <Typography component="h3" variant="h2">
-                    ${tier.price}
+                    {tier.price}
                   </Typography>
                   <Typography component="h3" variant="h6">
                     &nbsp; per month
