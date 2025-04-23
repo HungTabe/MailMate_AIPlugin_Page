@@ -6,8 +6,11 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useColorScheme } from '@mui/material/styles';
+import { useDispatch } from 'react-redux';
+import { setSelectedTheme } from '../../redux/themeSlide';
 
 export default function ColorModeIconDropdown(props) {
+  const dispatch = useDispatch();
   const { mode, systemMode, setMode } = useColorScheme();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -20,6 +23,7 @@ export default function ColorModeIconDropdown(props) {
   const handleMode = (targetMode) => () => {
     setMode(targetMode);
     handleClose();
+    dispatch(setSelectedTheme(targetMode));
   };
   if (!mode) {
     return (

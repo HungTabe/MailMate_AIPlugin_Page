@@ -3,6 +3,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/system';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 
 const whiteLogos = [
   'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/6560628e8573c43893fe0ace_Sydney-white.svg',
@@ -31,7 +34,16 @@ const logoStyle = {
 
 export default function LogoCollection() {
   const theme = useTheme();
-  const logos = theme.palette.mode === 'light' ? darkLogos : whiteLogos;
+  const selectedTheme = useSelector((state) => state.theme.selectedTheme);
+  const [logos, setLogos] = useState(theme.palette.mode === 'light' ? darkLogos : whiteLogos);
+
+
+  useEffect(() => {
+    if (selectedTheme === 'light' || selectedTheme === 'system') {
+      setLogos(darkLogos);
+    } else {
+      setLogos(whiteLogos);
+    }  }, [selectedTheme]);
 
   return (
     <Box id="logoCollection" sx={{ py: 4 }}>
@@ -43,6 +55,7 @@ export default function LogoCollection() {
       >
         Trusted by the best companies
       </Typography>
+      <div>
       <Grid container sx={{ justifyContent: 'center', mt: 0.5, opacity: 0.6 }}>
         {logos.map((logo, index) => (
           <Grid key={index}>
@@ -54,6 +67,7 @@ export default function LogoCollection() {
           </Grid>
         ))}
       </Grid>
+      </div>
     </Box>
   );
 }
