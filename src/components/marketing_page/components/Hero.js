@@ -73,7 +73,7 @@ export default function Hero() {
               fontSize: 'clamp(3rem, 10vw, 3.5rem)',
             }}
           >
-            Our&nbsp;latest&nbsp;
+            Upgrade&nbsp;your&nbsp;
             <Typography
               component="span"
               variant="h1"
@@ -85,7 +85,7 @@ export default function Hero() {
                 }),
               })}
             >
-              products
+              Mailing&nbsp;Experience
             </Typography>
           </Typography>
           <Typography
@@ -95,9 +95,9 @@ export default function Hero() {
               width: { sm: '100%', md: '80%' },
             }}
           >
-            Explore our cutting-edge dashboard, delivering high-quality solutions
-            tailored to your needs. Elevate your experience with top-tier features
-            and services.
+            Upgrade Your Email Experience Discover our state-of-the-art dashboard 
+            designed to provide premium solutions customized for you. Enhance your
+            workflow with advanced features and exceptional services.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
