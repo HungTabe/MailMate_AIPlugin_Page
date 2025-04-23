@@ -11,26 +11,44 @@ import { styled } from '@mui/material/styles';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import AndroidIcon from '@mui/icons-material/Android';
+import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
 
 const items = [
   {
     icon: <ViewQuiltRoundedIcon />,
-    title: 'Dashboard',
+    title: '[Basic feature] Summarize',
     description:
-      'This item could provide a snapshot of the most important metrics or data points related to the product.',
+      'MAILMate AI take over the task of summarizing for you. With AI-powered summarization, you can quickly extract the most important points from any text or email, saving you time and effort. No more sifting through long documents.',
     imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-light.png")`,
     imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/dash-dark.png")`,
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
-    title: 'Mobile integration',
+    title: '[Pro feature] Improve Mail Writing',
     description:
-      'This item could provide information about the mobile app version of the product.',
+      'Enhance your email communication with AI-powered writing support. Let AI help you craft professional, clear, and impactful emails in no time. Whether you are composing routine messages or complex business correspondence, AI can suggest improvements, correct grammar, and ensure your tone is perfect for any occasion.',
     imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-light.png")`,
     imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/mobile-dark.png")`,
   },
   {
     icon: <DevicesRoundedIcon />,
+    title: '[Premium feature] Auto Schedule',
+    description:
+      'Take control of your time with automatic job scheduling through email. With this feature, you can effortlessly plan and organize your tasks directly from your inbox. Set up deadlines, reminders, and appointments, and let the system automatically schedule them for you. Say goodbye to manual planning and stay on top of your work with ease.',
+    imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-light.png")`,
+    imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-dark.png")`,
+  },
+  {
+    icon: <AndroidIcon />,
+    title: '[Premium feature] Mail Auto ScriptBot',
+    description:
+      'Streamline your customer interactions with an Auto Script Bot designed for quick price inquiries and easy script conversion. This tool allows you to automate responses to common customer questions, providing fast and accurate price information without any manual effort. The bot instantly converts customer queries into tailored scripts, ensuring prompt and professional communication. Save time, improve customer satisfaction, and enhance your service efficiency with an automated solution that handles routine tasks effortlessly.',
+    imageLight: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-light.png")`,
+    imageDark: `url("${process.env.TEMPLATE_IMAGE_URL || 'https://mui.com'}/static/images/templates/templates-images/devices-dark.png")`,
+  },
+  {
+    icon: <AllInclusiveIcon />,
     title: 'Available on all platforms',
     description:
       'This item could let users know the product is available on all platforms, such as web, mobile, and desktop.',
@@ -158,9 +176,9 @@ export default function Features() {
           variant="body1"
           sx={{ color: 'text.secondary', mb: { xs: 2, sm: 4 } }}
         >
-          Provide a brief overview of the key features of the product. For example,
-          you could list the number of features, their types or benefits, and
-          add-ons.
+          MAILMate is the most productive email app ever made. Collaborate faster and get more done with AI-powered email.
+          Type less and Accelerate your team mail. Reduce the time spent typing and increase your team's efficiency with streamlined communication.
+          
         </Typography>
       </Box>
       <Box
