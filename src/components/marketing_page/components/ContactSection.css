@@ -1,0 +1,12 @@
+.contactlayout {
+    width: 100%;
+    height: 40%;
+    padding: 0 11% 4% 11%;    
+    display: flex;
+    justify-content: center;
+
+    .contactlayout-left{
+        width: auto;
+        text-align: center;
+    }
+}
