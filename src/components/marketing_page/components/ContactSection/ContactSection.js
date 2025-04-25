@@ -1,4 +1,4 @@
-import ContactUs from './ContactUs';
+import ContactUs from './ContactUs/ContactUs';
 import './ContactSection.css';
 import Typography from '@mui/material/Typography';
 
