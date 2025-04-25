@@ -1,0 +1,92 @@
+/* src/components/Detail2Component.css */
+.detail2-container {
+    background: linear-gradient(135deg, rgb(0 0 0 / 90%), rgba(8, 28, 43, -0.1));
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100vh;
+  }
+  
+  .detail2-header {
+    text-align: center;
+  }
+  
+  .main-heading {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .highlight-text {
+    color: #2c6ed5; /* Color similar to the highlighted word */
+  }
+  
+  .subheading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .info-text {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  
+  .team-snippets {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+  
+  .team-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .team-avatar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .team-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .new-items-count {
+    font-size: 18px;
+    background-color: #ff6f61;
+    padding: 5px 10px;
+    border-radius: 50%;
+  }
+  
+  .snippet-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .snippet-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .snippet-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .snippet-text {
+    font-size: 16px;
+    color: #b0b0b0;
+    max-width: 600px;
+    word-wrap: break-word;
+  }
+  
