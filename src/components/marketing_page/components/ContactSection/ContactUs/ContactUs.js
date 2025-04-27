@@ -29,8 +29,8 @@ export default function ContactUs() {
   return (
     <div className="ContactUsForm">
       <form onSubmit={handleSubmit}>
-      <Grid container spacing={3}>
-      <FormGrid size={{ xs: 12, md: 6 }}>
+        <Grid container spacing={3}>
+          <FormGrid size={{ xs: 12, md: 6 }}>
             <FormLabel htmlFor="full-name" required>
               Your Name
             </FormLabel>
@@ -46,87 +46,94 @@ export default function ContactUs() {
               onChange={handleInputChange}
             />
           </FormGrid>
-        <FormGrid size={{ xs: 12, md: 6 }}>
-          <FormLabel htmlFor="email" required>
-            Your mail
-          </FormLabel>
-          <OutlinedInput
-            id="email"
-            name="email"
-            type="email"
-            placeholder="johndoe@example.com"
-            autoComplete="email"
-            required
-            size="small"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </FormGrid>
-        <FormGrid size={{ xs: 12 }}>
-          <FormLabel htmlFor="phone-number">Phone Number (Optional)</FormLabel>
-          <OutlinedInput
-            id="phone-number"
-            name="phoneNumber"
-            type="tel"
-            placeholder="+1234567890"
-            autoComplete="tel"
-            size="small"
-            value={formData.phoneNumber}
-            onChange={handleInputChange}
-          />
-        </FormGrid>
-        <FormGrid size={{ xs: 12 }}>
-          <FormLabel htmlFor="last-name" required>
-            MAILMate subscription
-          </FormLabel>
-          <FormControlLabel
-            control={
-              <Checkbox
-                name="planType"
-                value="Free"
-                checked={formData.planType === "Free"}
-                onChange={handleCheckboxChange}
-              />
-            }
-            label="Free Ticket"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                name="planType"
-                value="Pro"
-                checked={formData.planType === "Pro"}
-                onChange={handleCheckboxChange}
-              />
-            }
-            label="Pro Ticket"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                name="planType"
-                value="Business"
-                checked={formData.planType === "Business"}
-                onChange={handleCheckboxChange}
-              />
-            }
-            label="Business Ticket"
-          />
-        </FormGrid>
-        <FormGrid size={{ xs: 12 }}>
-        <Button
+          <FormGrid size={{ xs: 12, md: 6 }}>
+            <FormLabel htmlFor="email" required>
+              Your mail
+            </FormLabel>
+            <OutlinedInput
+              id="email"
+              name="email"
+              type="email"
+              placeholder="johndoe@example.com"
+              autoComplete="email"
+              required
+              size="small"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+          </FormGrid>
+          <FormGrid size={{ xs: 12 }}>
+            <FormLabel htmlFor="phone-number">
+              Phone Number (Optional)
+            </FormLabel>
+            <OutlinedInput
+              id="phone-number"
+              name="phoneNumber"
+              type="tel"
+              placeholder="+1234567890"
+              autoComplete="tel"
+              size="small"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+            />
+          </FormGrid>
+          <FormGrid size={{ xs: 12 }}>
+            <FormLabel htmlFor="last-name" required>
+              MAILMate subscription
+            </FormLabel>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="planType"
+                  value="Free"
+                  checked={formData.planType === "Free"}
+                  onChange={handleCheckboxChange}
+                />
+              }
+              label="Free Ticket"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="planType"
+                  value="Pro"
+                  checked={formData.planType === "Pro"}
+                  onChange={handleCheckboxChange}
+                />
+              }
+              label="Pro Ticket"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="planType"
+                  value="Business"
+                  checked={formData.planType === "Business"}
+                  onChange={handleCheckboxChange}
+                />
+              }
+              label="Business Ticket"
+            />
+          </FormGrid>
+          <FormGrid size={{ xs: 12 }}>
+            <Button
               type="submit"
               variant="contained"
               endIcon={<SendIcon />}
               disabled={isLoading}
+              sx={{
+                color: 'black',
+              }}
             >
-              {isLoading ? 'Sending...' : 'Send'}
+              {isLoading ? "Sending..." : "Send"}
             </Button>
-        </FormGrid>
-      </Grid>
+          </FormGrid>
+        </Grid>
       </form>
-      {error && <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
-      {success && <p style={{ color: 'green', marginTop: '10px' }}>{success}</p>}
+      {error && <p style={{ color: "red", marginTop: "10px" }}>{error}</p>}
+      {success && (
+        <p style={{ color: "green", marginTop: "10px" }}>{success}</p>
+      )}
     </div>
   );
 }
