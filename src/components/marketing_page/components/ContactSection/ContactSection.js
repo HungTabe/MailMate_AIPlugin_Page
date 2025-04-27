@@ -1,5 +1,5 @@
 import ContactUs from './ContactUs/ContactUs';
-import './ContactSection.css';
+import './ContactSectionStyle.css';
 import Typography from '@mui/material/Typography';
 
 export default function ContactSection() {
