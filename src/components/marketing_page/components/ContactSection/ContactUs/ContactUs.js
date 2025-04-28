@@ -119,11 +119,8 @@ export default function ContactUs() {
             <Button
               type="submit"
               variant="contained"
+              color="primary"
               endIcon={<SendIcon />}
-              disabled={isLoading}
-              sx={{
-                color: 'black',
-              }}
             >
               {isLoading ? "Sending..." : "Send"}
             </Button>
