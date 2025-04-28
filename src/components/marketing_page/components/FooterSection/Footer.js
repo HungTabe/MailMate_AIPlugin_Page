@@ -16,7 +16,7 @@ import useFooterForm from "./useFooterForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
+ 
 function Copyright() {
   return (
     <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>
@@ -135,7 +135,7 @@ export default function Footer() {
           <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
             Product
           </Typography>
-          <Link color="text.secondary" variant="body2">
+          <Link color="text.secondary" variant="body2" href="#">
             Features
           </Link>
           <Link color="text.secondary" variant="body2" href="#">
