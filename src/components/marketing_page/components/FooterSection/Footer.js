@@ -11,7 +11,11 @@ import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
-import SitemarkIcon from './SitemarkIcon';
+import SitemarkIcon from '../SitemarkIcon';
+import useFooterForm from "./useFooterForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function Copyright() {
   return (
@@ -27,6 +31,24 @@ function Copyright() {
 }
 
 export default function Footer() {
+  const {
+      formData,
+      isLoading,
+      error,
+      success,
+      handleInputChange,
+      handleSubmit,
+    } = useFooterForm();
+
+      React.useEffect(() => {
+        if (error) {
+          toast.error(error);
+        }
+        if (success) {
+          toast.success(success);
+        }
+      }, [error, success]);
+
   return (
     <Container
       sx={{
@@ -63,15 +85,25 @@ export default function Footer() {
               Subscribe for weekly updates. No spams ever!
             </Typography>
             <InputLabel htmlFor="email-newsletter">Email</InputLabel>
+            <form onSubmit={handleSubmit} sx={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center', // Thêm để căn giữa theo chiều dọc nếu cần
+            }}>
             <Stack direction="row" spacing={1} useFlexGap>
               <TextField
-                id="email-newsletter"
+                id="email"
                 hiddenLabel
                 size="small"
+                type='email'
+                name="email"
                 variant="outlined"
                 fullWidth
                 aria-label="Enter your email address"
                 placeholder="Your email address"
+                value={formData.email}
+                onChange={handleInputChange}
                 slotProps={{
                   htmlInput: {
                     autoComplete: 'off',
@@ -84,11 +116,13 @@ export default function Footer() {
                 variant="contained"
                 color="primary"
                 size="small"
-                sx={{ flexShrink: 0 }}
+                sx={{ flexShrink: 0, minWidth: "fit-content"}}
+                type="submit"
               >
-                Subscribe
+                {isLoading ? "Sending..." : "Subcribe"}
               </Button>
             </Stack>
+            </form>
           </Box>
         </Box>
         <Box
@@ -101,7 +135,7 @@ export default function Footer() {
           <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
             Product
           </Typography>
-          <Link color="text.secondary" variant="body2" href="#">
+          <Link color="text.secondary" variant="body2">
             Features
           </Link>
           <Link color="text.secondary" variant="body2" href="#">
@@ -215,6 +249,12 @@ export default function Footer() {
           </IconButton>
         </Stack>
       </Box>
+      <ToastContainer
+        position="top-right"
+        autoClose={1500}
+        theme="colored"
+        toastStyle={{ fontSize: "16px" }}
+      />
     </Container>
   );
 }
