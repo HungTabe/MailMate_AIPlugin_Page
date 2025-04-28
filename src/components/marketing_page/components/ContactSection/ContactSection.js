@@ -25,7 +25,7 @@ export default function ContactSection() {
           gutterBottom
           sx={{ color: 'text.primary' }}
         >
-          Setup MAILMate WaitingList Now
+          MAILMate Now
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary' }}>
           Don't miss out — Upgrade your working performance today <br /> Get more information throught Email about our subsciption.
