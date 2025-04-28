@@ -1,11 +1,23 @@
 import ContactUs from './ContactUs/ContactUs';
 import './ContactSectionStyle.css';
 import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+
 
 export default function ContactSection() {
     return (
-        
-        <div className='contactlayout MuiContainer-root MuiContainer-maxWidthLg css-1649zvi-MuiContainer-root'>
+        <Container
+          maxWidth="lg"
+          sx={(theme) => ({
+            width: '100%',
+            height: '40%',
+            padding: theme.spacing(0, '11%', '4%', '11%'),
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center', // Thêm để căn giữa theo chiều dọc
+          })}
+        >
         <div className='contactlayout-left'>
         <Typography
           component="h2"
@@ -20,6 +32,6 @@ export default function ContactSection() {
         </Typography>
         </div>
         <ContactUs/>
-        </div>
+        </Container>
     )
 }

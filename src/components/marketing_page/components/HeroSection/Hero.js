@@ -110,7 +110,7 @@ export default function Hero() {
                 }),
               })}
             >
-              Mailing&nbsp;Experience
+              Mail&nbsp;Experience
             </Typography>
           </Typography>
           <Typography
