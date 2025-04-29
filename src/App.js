@@ -7,6 +7,8 @@ import Dashboard from './components/Dashboard';
 import Pagein from './components/pagein';
 import MarketingPage from './components/marketing_page/MarketingPage';
 import SignInPage from './components/sign-in_page/SignIn';
+import SignUpPage from './components/sign-up_page/SignUp';
+
 
 
 
@@ -18,6 +20,7 @@ function App() {
         <Route path="" element={<MarketingPage/>}/>
         <Route path="/marketing" element={<MarketingPage/>}/>
         <Route path="/signin" element={<SignInPage/>}/>
+        <Route path="/signup" element={<SignUpPage/>}/>
       </Routes>
     </Router>
   );
