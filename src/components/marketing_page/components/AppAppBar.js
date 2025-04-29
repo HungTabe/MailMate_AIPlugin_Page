@@ -12,6 +12,7 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ColorModeIconDropdown from '../../shared-theme/ColorModeIconDropdown';
+import { useNavigate } from 'react-router-dom';
 import Sitemark from './SitemarkIcon';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -32,6 +33,11 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 export default function AppAppBar() {
   const [open, setOpen] = React.useState(false);
+  const navigate = useNavigate();
+
+  const handleSignIn = () => {
+    navigate('/signin');
+  }
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -80,7 +86,7 @@ export default function AppAppBar() {
               alignItems: 'center',
             }}
           >
-            <Button color="primary" variant="text" size="small">
+            <Button color="primary" variant="text" size="small"  onClick={handleSignIn} >
               Sign in
             </Button>
             <Button color="primary" variant="contained" size="small">
@@ -128,7 +134,7 @@ export default function AppAppBar() {
                   </Button>
                 </MenuItem>
                 <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
+                  <Button color="primary" variant="outlined" fullWidth  onClick={handleSignIn} >
                     Sign in
                   </Button>
                 </MenuItem>
