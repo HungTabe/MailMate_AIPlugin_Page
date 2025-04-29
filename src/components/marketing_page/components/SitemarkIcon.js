@@ -3,6 +3,7 @@ import './SitemarkIcon.css';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/system';
+import Typography from '@mui/material/Typography'; // Thêm Typography
 
 
 export default function SitemarkIcon() {
@@ -20,6 +21,14 @@ export default function SitemarkIcon() {
   }, [selectedTheme]);
 
   return (
-      <h1 style={{ color: logos === 'dark' ? 'black' : 'white' }}>MAILMATE</h1>
+    <Typography
+    variant="h1"
+    sx={{
+      color: 'text.primary',
+      fontSize: 'small',
+    }}
+  >
+    MAILMATE
+  </Typography>
   );
 }
