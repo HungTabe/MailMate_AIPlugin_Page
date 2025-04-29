@@ -3,7 +3,9 @@ import './SitemarkIcon.css';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/system';
-import Typography from '@mui/material/Typography'; // Thêm Typography
+import Typography from '@mui/material/Typography';
+import { Link as RouterLink } from 'react-router-dom';
+
 
 
 export default function SitemarkIcon() {
@@ -26,7 +28,11 @@ export default function SitemarkIcon() {
     sx={{
       color: 'text.primary',
       fontSize: 'small',
+      textDecoration: 'none',
     }}
+    component={RouterLink}
+    to="/marketing"
+
   >
     MAILMATE
   </Typography>
