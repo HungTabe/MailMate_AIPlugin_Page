@@ -44,7 +44,7 @@ const useFooterForm = () => {
     }
 
     try {
-      const response = await axios.post('https://mailmatebe-akg9fhe2fddfhrbt.canadacentral-01.azurewebsites.net/api/marketing/consultation-request', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/marketing/consultation-request`, {
         fullName: 'Customer', // Fixed value as per requirement
         email: formData.email,
         phoneNumber: '+84123456789',
