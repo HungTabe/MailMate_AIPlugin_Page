@@ -57,7 +57,7 @@ const useContactUsForm = () => {
     }
 
     try {
-      const response = await axios.post('https://mailmatebe-akg9fhe2fddfhrbt.canadacentral-01.azurewebsites.net/api/marketing/consultation-request', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/marketing/consultation-request`, {
         fullName: formData.fullName,
         email: formData.email,
         phoneNumber: formData.phoneNumber || null,
