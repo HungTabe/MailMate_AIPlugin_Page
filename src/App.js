@@ -3,7 +3,7 @@ import './components/Header.css';
 
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/dashboard_page/Dashboard';
 import Pagein from './components/pagein';
 import MarketingPage from './components/marketing_page/MarketingPage';
 import SignInPage from './components/sign-in_page/SignIn';
