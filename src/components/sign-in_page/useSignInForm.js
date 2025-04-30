@@ -35,7 +35,7 @@ const useSignInForm = () => {
             autoClose: 3000,
           });
           setTimeout(() => {
-            navigate('/marketing');
+            navigate('/dashboard');
           }, 2000);
         } catch (error) {
           const errorMessage = error.response?.data?.message || "An error occurred while submitting your request.";
