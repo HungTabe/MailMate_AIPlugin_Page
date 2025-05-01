@@ -8,6 +8,7 @@ import Pagein from './components/pagein';
 import MarketingPage from './components/marketing_page/MarketingPage';
 import SignInPage from './components/sign-in_page/SignIn';
 import SignUpPage from './components/sign-up_page/SignUp';
+import MailmateBotPage from './components/dashboard_page/sub_dashboard_page/MAILMate_Bot_page/MAILMate_Bot_page';
 
 
 
@@ -21,6 +22,8 @@ function App() {
         <Route path="/marketing" element={<MarketingPage/>}/>
         <Route path="/signin" element={<SignInPage/>}/>
         <Route path="/signup" element={<SignUpPage/>}/>
+        <Route path="/bot" element={<MailmateBotPage/>}/>
+
       </Routes>
     </Router>
   );
