@@ -43,7 +43,7 @@ export default function MenuContent() {
           <ListItem key={index} disablePadding sx={{ display: 'block' }}>
             <ListItemButton
               component={Link}
-              to={`${item.path}?index=${index}`} // Add index to URL
+              to={`${item.path}?index=${index}&text=${encodeURIComponent(item.text)}`} // Add index to URL
               selected={selectedIndex === index}
               onClick={() => handleListItemClick(index)}
             >
