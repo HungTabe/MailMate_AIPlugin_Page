@@ -12,6 +12,8 @@ import Header from '../../components/Header';
 import SideMenu from '../../components/SideMenu';
 import AppTheme from '../../../shared-theme/AppTheme';
 // import AppTheme from '../shared-theme/AppTheme';
+import MainGrid from './components/MainGrid';
+
 
 
 import {
@@ -55,6 +57,7 @@ export default function MailmateBotPage(props) {
             }}
           >
             <Header />
+            <MainGrid />
           </Stack>
         </Box>
       </Box>
