@@ -12,6 +12,7 @@ import Header from '../../components/Header';
 import SideMenu from '../../components/SideMenu';
 import AppTheme from '../../../shared-theme/AppTheme';
 // import AppTheme from '../shared-theme/AppTheme';
+import MainGrid from './components/MainGrid';
 
 
 import {
@@ -28,7 +29,7 @@ const xThemeComponents = {
   ...treeViewCustomizations,
 };
 
-export default function MailmateBotPage(props) {
+export default function MailmateAgentPage(props) {
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
@@ -55,6 +56,7 @@ export default function MailmateBotPage(props) {
             }}
           >
             <Header />
+            <MainGrid />
           </Stack>
         </Box>
       </Box>

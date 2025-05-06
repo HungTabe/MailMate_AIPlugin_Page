@@ -20,7 +20,7 @@ const mainListItems = [
   { text: 'Schedule', icon: <PeopleRoundedIcon />, path: '/schedule' },
   { text: 'MAILMate Bot', icon: <AssignmentRoundedIcon />, path: '/bot' },
   { text: 'MMate Agent', icon: <AndroidIcon />, path: '/agent' },
-  { text: 'MMate Extra Service', icon: <AddToQueueIcon />, path: '/agent' },
+  { text: 'MMate Extra Service', icon: <AddToQueueIcon />, path: '/extra' },
 ];
 
 // Secondary list omitted for brevity
