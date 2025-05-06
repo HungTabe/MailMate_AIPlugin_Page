@@ -18,6 +18,8 @@ import { Add } from "@mui/icons-material";
 import MiniCalendar from "./components/MiniCalendar";
 import CalendarList from "./components/CalendarList";
 import WeekCalendar from "./components/WeekCalendar";
+import { useTheme, useMediaQuery } from '@mui/material';
+import MobileMessage from '../../utils/components/MobileMessage';
 
 const xThemeComponents = {
   ...chartsCustomizations,
@@ -27,10 +29,20 @@ const xThemeComponents = {
 };
 
 export default function MailmateBotPage(props) {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
       <Box sx={{ display: "flex" }}>
+      {isMobile ? (
+          <>
+            <AppNavbar />
+            <MobileMessage />
+          </>
+        ) : (
+        <>
         <SideMenu />
         <AppNavbar />
         <Box
@@ -64,7 +76,7 @@ export default function MailmateBotPage(props) {
               sx={{
                 display: "flex",
                 width: "100%",
-                height: "calc(100vh - 120px)",
+                height: "100vh",
                 borderTop: "1px solid",
                 borderColor: "white",
               }}
@@ -76,7 +88,7 @@ export default function MailmateBotPage(props) {
                     variant="contained"
                     startIcon={<Add />}
                     sx={{
-                      bbackgroundColor: "#c2e7ff",
+                      backgroundColor: "#c2e7ff",
                       color: "#001d35",
                       textTransform: "none",
                       fontWeight: 500,
@@ -98,6 +110,8 @@ export default function MailmateBotPage(props) {
             </Box>
           </Stack>
         </Box>
+        </>
+        )}
       </Box>
     </AppTheme>
   );
