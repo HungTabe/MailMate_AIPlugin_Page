@@ -12,8 +12,8 @@ import MailmateBotPage from './components/dashboard_page/sub_dashboard_page/MAIL
 import MailmateAgentPage from './components/dashboard_page/sub_dashboard_page/MAILMate_Agent_page/MAILMate_Agent_page';
 import MailmateSchedulePage from './components/dashboard_page/sub_dashboard_page/MAILMate_Schedule_page/MAILMate_Schedule_page';
 import MailmateMailPage from './components/dashboard_page/sub_dashboard_page/MAILMate_Mail_page/MAILMate_Mail_page';
-
-
+import MailmateExtraServicePage from './components/dashboard_page/sub_dashboard_page/MAILMate_ExtraService_page/MAILMate_ExtraService_page';
+// import MailmateAgentPage from  './components/dashboard_page/sub_dashboard_page/MAILMate_Agent_page/MAILMate_Agent_page';
 
 
 
@@ -31,6 +31,7 @@ function App() {
         <Route path="/agent" element={<MailmateAgentPage/>}/>
         <Route path="/schedule" element={<MailmateSchedulePage/>}/>
         <Route path="/mail" element={<MailmateMailPage/>}/>
+        <Route path="/extra" element={<MailmateExtraServicePage/>}/>
 
 
       </Routes>
