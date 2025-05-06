@@ -15,15 +15,15 @@ const days = [
   { day: 'T4', date: 10 },
 ];
 
-const hours = Array.from({ length: 24 }, (_, i) => i + 7); // 7AM to 8PM
+const hours = Array.from({ length: 24 }, (_, i) => i + 1); // 7AM to 8PM
 
 const WeekCalendar = () => (
-  <Box sx={{ flex: 1, overflow: 'auto' }}>
+  <Box sx={{ flex: 1, overflow: 'auto', borderBottom: "1px solid #e0e0e0"  }}>
     <Box sx={{ display: 'flex', alignItems: 'center', p: 2, borderBottom: '1px solid #e0e0e0' }}>
       <Typography variant="h6">Tháng 5, 2025</Typography>
       <Box sx={{ flexGrow: 1 }} />
       {/* <Button variant="outlined" size="small" sx={{ mr: 1 }}>
-        Tuần
+        Tuần    
       </Button> */}
     </Box>
     <Box sx={{ display: 'grid', gridTemplateColumns: '60px repeat(7, 1fr)' }}>
