@@ -16,6 +16,9 @@ const useSignInForm = () => {
         }
       );
 
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
       const message = response.data.message || "Login successfully";
 
       setTimeout(() => {
