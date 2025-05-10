@@ -3,11 +3,17 @@ import './components/Header.css';
 
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/dashboard_page/Dashboard';
 import Pagein from './components/pagein';
 import MarketingPage from './components/marketing_page/MarketingPage';
 import SignInPage from './components/sign-in_page/SignIn';
 import SignUpPage from './components/sign-up_page/SignUp';
+import MailmateBotPage from './components/dashboard_page/sub_dashboard_page/MAILMate_Bot_page/MAILMate_Bot_page';
+import MailmateAgentPage from './components/dashboard_page/sub_dashboard_page/MAILMate_Agent_page/MAILMate_Agent_page';
+import MailmateSchedulePage from './components/dashboard_page/sub_dashboard_page/MAILMate_Schedule_page/MAILMate_Schedule_page';
+import MailmateMailPage from './components/dashboard_page/sub_dashboard_page/MAILMate_Mail_page/MAILMate_Mail_page';
+import MailmateExtraServicePage from './components/dashboard_page/sub_dashboard_page/MAILMate_ExtraService_page/MAILMate_ExtraService_page';
+// import MailmateAgentPage from  './components/dashboard_page/sub_dashboard_page/MAILMate_Agent_page/MAILMate_Agent_page';
 
 
 
@@ -21,6 +27,13 @@ function App() {
         <Route path="/marketing" element={<MarketingPage/>}/>
         <Route path="/signin" element={<SignInPage/>}/>
         <Route path="/signup" element={<SignUpPage/>}/>
+        <Route path="/bot" element={<MailmateBotPage/>}/>
+        <Route path="/agent" element={<MailmateAgentPage/>}/>
+        <Route path="/schedule" element={<MailmateSchedulePage/>}/>
+        <Route path="/mail" element={<MailmateMailPage/>}/>
+        <Route path="/extra" element={<MailmateExtraServicePage/>}/>
+
+
       </Routes>
     </Router>
   );

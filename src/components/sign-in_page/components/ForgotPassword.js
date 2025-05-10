@@ -60,3 +60,4 @@ ForgotPassword.propTypes = {
 };
 
 export default ForgotPassword;
+
