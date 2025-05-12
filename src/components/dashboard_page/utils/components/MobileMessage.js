@@ -17,7 +17,7 @@ const MobileMessage = () => (
     <Typography
       variant="h6"
       sx={{
-        color: 'white',
+        color: 'text.primary',
         fontFamily: 'Roboto, sans-serif',
         fontWeight: 500,
       }}

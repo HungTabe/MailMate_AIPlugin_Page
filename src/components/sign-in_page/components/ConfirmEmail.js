@@ -290,12 +290,13 @@ export default function NavyAuthModal({ open, onClose }) {
             "&:hover": {
               color: "#ffffff",
               bgcolor: alpha(metallicBlue.light, 0.1),
+              py : 4,
             },
             transition: "all 0.3s ease",
             letterSpacing: "0.5px",
           }}
         >
-          Request Later
+          If you have authorized Google Mail <br/> Click here
         </Button>
 
         <Zoom in={!success}>
