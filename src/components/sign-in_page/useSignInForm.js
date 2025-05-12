@@ -21,11 +21,12 @@ const useSignInForm = () => {
 
       const message = response.data.message || "Login successfully";
 
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 2000);
-
-      return { status: "success", message };
+      return {
+        status: "success",
+        message,
+        user: response.data.user,
+        token: response.data.token,
+      };
     } catch (error) {
       const errorMessage =
         error.response?.data?.message ||

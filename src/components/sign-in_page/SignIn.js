@@ -22,6 +22,8 @@ import { useForm } from "react-hook-form";
 import useSignInForm from "./useSignInForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ConfirmEmailAccessModal from "./components/ConfirmEmail";
+import { useNavigate } from "react-router-dom";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -72,6 +74,9 @@ export default function SignIn(props) {
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState("");
   const [open, setOpen] = React.useState(false);
 
+  const [confirmModalOpen, setConfirmModalOpen] = React.useState(false);
+  const [formData, setFormData] = React.useState(null); // store email + password
+  const navigate = useNavigate();
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -80,8 +85,24 @@ export default function SignIn(props) {
     setOpen(false);
   };
 
-  // Using React Hook Form
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const isAuthorized = params.get("emailAuthorized") === "true";
+    const isError = params.get("error");
 
+    if (isAuthorized) {
+      toast.success("Email đã được xác thực thành công!");
+      navigate("/dashboard");
+    } else if (isError) {
+      toast.error("Xác thực email không thành công. Vui lòng thử lại.");
+    }
+
+    // Xoá query params trên URL
+    const cleanUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }, []);
+
+  // Using React Hook Form
   const {
     register,
     handleSubmit,
@@ -113,7 +134,7 @@ export default function SignIn(props) {
       },
     };
 
-    const toastId = toast.loading("Signing in...");
+    const toastId = toast.loading("Loading...");
     const result = await submitForm(event);
 
     toast.update(toastId, {
@@ -123,6 +144,16 @@ export default function SignIn(props) {
       autoClose: 2000,
       closeOnClick: true,
     });
+
+    if (result.status === "success") {
+      // Lưu thông tin người dùng vào state hoặc localStorage
+      localStorage.setItem("user", JSON.stringify(result.user));
+      localStorage.setItem("token", result.token);
+
+      // Mở modal yêu cầu xác thực Gmail
+      setFormData(data);
+      setConfirmModalOpen(true);
+    }
   };
 
   return (
@@ -242,6 +273,10 @@ export default function SignIn(props) {
             </Typography>
           </Box>
         </Card>
+        <ConfirmEmailAccessModal
+          open={confirmModalOpen}
+          onClose={() => setConfirmModalOpen(false)}
+        />
       </SignInContainer>
     </AppTheme>
   );
