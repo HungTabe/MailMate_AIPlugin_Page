@@ -4,7 +4,6 @@ import './components/Header.css';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/dashboard_page/Dashboard';
-import Pagein from './components/pagein';
 import MarketingPage from './components/marketing_page/MarketingPage';
 import SignInPage from './components/sign-in_page/SignIn';
 import SignUpPage from './components/sign-up_page/SignUp';
@@ -18,23 +17,24 @@ import MailmateExtraServicePage from './components/dashboard_page/sub_dashboard_
 
 
 
+import { AuthProvider } from "./hook/authContext/AuthContext";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="" element={<MarketingPage/>}/>
-        <Route path="/marketing" element={<MarketingPage/>}/>
-        <Route path="/signin" element={<SignInPage/>}/>
-        <Route path="/signup" element={<SignUpPage/>}/>
-        <Route path="/bot" element={<MailmateBotPage/>}/>
-        <Route path="/agent" element={<MailmateAgentPage/>}/>
-        <Route path="/schedule" element={<MailmateSchedulePage/>}/>
-        <Route path="/mail" element={<MailmateMailPage/>}/>
-        <Route path="/extra" element={<MailmateExtraServicePage/>}/>
-
-
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="" element={<MarketingPage />} />
+          <Route path="/marketing" element={<MarketingPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/bot" element={<MailmateBotPage />} />
+          <Route path="/agent" element={<MailmateAgentPage />} />
+          <Route path="/schedule" element={<MailmateSchedulePage />} />
+          <Route path="/mail" element={<MailmateMailPage />} />
+          <Route path="/extra" element={<MailmateExtraServicePage />} />
+        </Routes>
+      </AuthProvider>
     </Router>
   );
 }

@@ -18,6 +18,8 @@ import EmailSidebar from './components/EmailSidebar';
 import EmailList from './components/EmailList';
 import MobileMessage from '../../utils/components/MobileMessage';
 
+import useEmails from "../../../../hook/mail/useMails";
+
 const xThemeComponents = {
   ...chartsCustomizations,
   ...dataGridCustomizations,
@@ -25,22 +27,16 @@ const xThemeComponents = {
   ...treeViewCustomizations,
 };
 
-const emails = [
-  { sender: 'Duolingo', subject: 'Ban chi con 8 ngay de ban hoc...', date: '2 May' },
-  { sender: 'Adobe Creative Cloud', subject: 'Explore a universe of ideas...', date: '2 May' },
-  { sender: 'sadpanda884 on Instagram', subject: 'hungngob2tbc oi, hay bat kip...', date: '30 Apr' },
-  { sender: 'ivan at Notion', subject: 'Notion 2.50: Meet Notion Mail...', date: '30 Apr' },
-  { sender: 'CodePen', subject: 'Clip Path Shapes, GSAP Image...', date: '29 Apr' },
-];
-
 export default function MailmateBotPage(props) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const { emails, loading, error } = useEmails(); // ✅ sử dụng hook
 
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: "flex" }}>
         {isMobile ? (
           <>
             <AppNavbar />
@@ -57,13 +53,13 @@ export default function MailmateBotPage(props) {
                 backgroundColor: theme.vars
                   ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
                   : alpha(theme.palette.background.default, 1),
-                overflow: 'auto',
+                overflow: "auto",
               })}
             >
               <Stack
                 spacing={2}
                 sx={{
-                  alignItems: 'center',
+                  alignItems: "center",
                   mx: 3,
                   pb: 1,
                   mt: { xs: 8, md: 0 },
@@ -74,14 +70,14 @@ export default function MailmateBotPage(props) {
               <Stack
                 spacing={2}
                 sx={{
-                  alignItems: 'center',
-                  borderTop: '1px solid',
-                  borderColor: 'divider',
+                  alignItems: "center",
+                  borderTop: "1px solid",
+                  borderColor: "divider",
                 }}
               >
-                <Box sx={{ display: 'flex', width: '100%' }}>
+                <Box sx={{ display: "flex", width: "100%" }}>
                   <EmailSidebar />
-                  <EmailList emails={emails} />
+                  <EmailList emails={emails} loading={loading} error={error} />
                 </Box>
               </Stack>
             </Box>

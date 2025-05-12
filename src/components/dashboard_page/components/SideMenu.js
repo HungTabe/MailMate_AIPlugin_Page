@@ -11,6 +11,7 @@ import MenuContent from './MenuContent';
 import CardAlert from './CardAlert';
 import OptionsMenu from './OptionsMenu';
 
+import Skeleton from "@mui/material/Skeleton";
 import Tooltip from "@mui/material/Tooltip";
 import useProfile from "../../../hook/profile/useProfile";
 const drawerWidth = 240;
@@ -26,12 +27,18 @@ const Drawer = styled(MuiDrawer)({
   },
 });
 
-export default function SideMenu() {
-  const { profile, loading } = useProfile();
+const SideMenu = React.memo(function SideMenu() {
+  const { profile, loading, error } = useProfile();
 
-  if (loading) {
-    return <div>Loading...</div>; // Hoặc skeleton loading
-  }
+  // Debug: log profile data and errors
+  React.useEffect(() => {
+    if (error) {
+      console.error("Profile loading error:", error);
+    }
+    if (profile) {
+      console.log("Current profile:", profile);
+    }
+  }, [profile, error]);
 
   return (
     <Drawer
@@ -69,64 +76,78 @@ export default function SideMenu() {
         sx={{
           p: 2,
           gap: 1,
-          alignItems: 'center',
-          borderTop: '1px solid',
-          borderColor: 'divider',
+          alignItems: "center",
+          borderTop: "1px solid",
+          borderColor: "divider",
         }}
       >
-        <Avatar
-          sizes="small"
-          alt={profile?.fullName || "User"}
-          src={profile?.avatar}
-          sx={{ width: 36, height: 36, bgcolor: "primary.main" }}
-        >
-          {!profile?.avatar &&
-            (profile?.fullName
-              ? profile.fullName.charAt(0).toUpperCase()
-              : "U")}
-        </Avatar>
-        <Box
-          sx={{
-            mr: "auto",
-            minWidth: 0, // Quan trọng: cho phép text overflow
-            maxWidth: "calc(100% - 100px)", // Điều chỉnh theo nhu cầu
-          }}
-        >
-          <Typography
-            variant="body2"
-            sx={{
-              fontWeight: 500,
-              lineHeight: "16px",
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-            }}
-          >
-            {profile?.fullName || "User"}
-          </Typography>
-          <Tooltip
-            title={profile?.email || "user@example.com"}
-            placement="top"
-            arrow
-          >
-            <Typography
-              variant="caption"
-              title={profile?.email || "user@example.com"}
+        {loading ? (
+          <>
+            <Skeleton variant="circular" width={36} height={36} />
+            <Box sx={{ flexGrow: 1, minWidth: 0 }}>
+              <Skeleton variant="text" width="60%" />
+              <Skeleton variant="text" width="80%" />
+            </Box>
+            <Skeleton variant="circular" width={24} height={24} />
+          </>
+        ) : (
+          <>
+            <Avatar
+              sizes="small"
+              alt={profile?.fullName || "User"}
+              src={profile?.avatar}
+              sx={{ width: 36, height: 36, bgcolor: "primary.main" }}
+            >
+              {!profile?.avatar &&
+                (profile?.fullName
+                  ? profile.fullName.charAt(0).toUpperCase()
+                  : "U")}
+            </Avatar>
+            <Box
               sx={{
-                color: "text.secondary",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                display: "block",
-                maxWidth: "100%", // Đảm bảo email không vượt quá khung
+                mr: "auto",
+                minWidth: 0,
+                maxWidth: "calc(100% - 100px)",
               }}
             >
-              {profile?.email || "user@example.com"}
-            </Typography>
-          </Tooltip>
-        </Box>
-        <OptionsMenu />
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: 500,
+                  lineHeight: "16px",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                {profile?.fullName || "User"}
+              </Typography>
+              <Tooltip
+                title={profile?.email || "user@example.com"}
+                placement="top"
+                arrow
+              >
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: "text.secondary",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    display: "block",
+                    maxWidth: "100%",
+                  }}
+                >
+                  {profile?.email || "user@example.com"}
+                </Typography>
+              </Tooltip>
+            </Box>
+            <OptionsMenu />
+          </>
+        )}
       </Stack>
     </Drawer>
   );
-}
+});
+
+export default SideMenu;
