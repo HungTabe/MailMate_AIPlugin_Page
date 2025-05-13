@@ -18,23 +18,24 @@ import MailmateExtraServicePage from './components/dashboard_page/sub_dashboard_
 
 
 
+import { AuthProvider } from "./hook/authContext/AuthContext";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="" element={<MarketingPage/>}/>
-        <Route path="/marketing" element={<MarketingPage/>}/>
-        <Route path="/signin" element={<SignInPage/>}/>
-        <Route path="/signup" element={<SignUpPage/>}/>
-        <Route path="/bot" element={<MailmateBotPage/>}/>
-        <Route path="/agent" element={<MailmateAgentPage/>}/>
-        <Route path="/schedule" element={<MailmateSchedulePage/>}/>
-        <Route path="/mail" element={<MailmateMailPage/>}/>
-        <Route path="/extra" element={<MailmateExtraServicePage/>}/>
-
-
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="" element={<MarketingPage />} />
+          <Route path="/marketing" element={<MarketingPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/bot" element={<MailmateBotPage />} />
+          <Route path="/agent" element={<MailmateAgentPage />} />
+          <Route path="/schedule" element={<MailmateSchedulePage />} />
+          <Route path="/mail" element={<MailmateMailPage />} />
+          <Route path="/extra" element={<MailmateExtraServicePage />} />
+        </Routes>
+      </AuthProvider>
     </Router>
   );
 }
