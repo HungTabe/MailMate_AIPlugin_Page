@@ -34,7 +34,7 @@ const useEmails = (limit = 10) => {
         }
       );
 
-      console.log("API response:", response.data); // ✅ debug
+      console.log("API response:", response.data);
 
       const emailsRaw = response.data.data || response.data;
 
@@ -53,6 +53,7 @@ const useEmails = (limit = 10) => {
             })
           : "Unknown date",
         summary: email.summary || email.snippet,
+        messageId: email.messageId || null,
         isRead: email.isRead || false,
         labels: email.labels || [],
       }));

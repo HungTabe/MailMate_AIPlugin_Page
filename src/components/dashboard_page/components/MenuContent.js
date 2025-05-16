@@ -13,14 +13,16 @@ import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import AndroidIcon from '@mui/icons-material/Android';
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
+import CreditScoreIcon from '@mui/icons-material/CreditScore';
 
 const mainListItems = [
   { text: 'Home', icon: <HomeRoundedIcon />, path: '/dashboard' },
   { text: 'Mail', icon: <AnalyticsRoundedIcon />, path: '/mail' },
   { text: 'Schedule', icon: <PeopleRoundedIcon />, path: '/schedule' },
   { text: 'MAILMate Bot', icon: <AssignmentRoundedIcon />, path: '/bot' },
-  { text: 'MMate Agent', icon: <AndroidIcon />, path: '/agent' },
+  // { text: 'MMate Agent', icon: <AndroidIcon />, path: '/agent' },
   { text: 'MMate Extra Service', icon: <AddToQueueIcon />, path: '/extra' },
+  { text: 'Payment', icon: <CreditScoreIcon />, path: '/payment' },
 ];
 
 // Secondary list omitted for brevity

@@ -14,6 +14,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
+import { useLocation } from 'react-router-dom';
 
 const stripHtml = (html) => {
   const tmp = document.createElement("div");
@@ -31,13 +32,30 @@ const getInitials = (name) =>
     .join("")
     .toUpperCase();
 
-const EmailItem = ({ sender, subject, date, summary, isRead }) => {
+const EmailItem = ({ sender, subject, date, summary, isRead, messageId }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const theme = useTheme();
+  const location = useLocation();
+  console.log("XXXX: ", messageId);
 
-  const handleOpenModal = () => setOpenModal(true);
-  const handleCloseModal = () => setOpenModal(false);
+  const handleOpenModal = (messageId) => {
+    const params = new URLSearchParams();
+    params.set('messageid', messageId);
+    setOpenModal(true);
+
+  }
+  const handleCloseModalWithRedirect = () => { 
+    setOpenModal(false); 
+    const params = new URLSearchParams(location.search);
+    const messageId = params.get('messageid');
+    const gmailUrl = `https://mail.google.com/mail/u/0/?ogbl#inbox/${messageId}`;
+    window.location.href = gmailUrl;
+  }
+
+  const handleCloseModal = () => { 
+    setOpenModal(false); 
+  }
 
   return (
     <>
@@ -59,7 +77,7 @@ const EmailItem = ({ sender, subject, date, summary, isRead }) => {
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onClick={handleOpenModal}
+        onClick={() => handleOpenModal(messageId)}
       >
         <Box display="flex" alignItems="center" gap={2}>
           <Box flex={1}>
@@ -82,7 +100,12 @@ const EmailItem = ({ sender, subject, date, summary, isRead }) => {
               {subject}
             </Typography>
             {isHovered && (
-              <Typography variant="body2" color="gray" noWrap>
+              <Typography variant="body2" color="secondary" Wrap
+              sx={{
+                py: 2,
+                fontSize: "Bold",
+              }}
+              >
                 {summary}
               </Typography>
             )}
@@ -151,11 +174,11 @@ const EmailItem = ({ sender, subject, date, summary, isRead }) => {
           sx={{ backgroundColor: "#000", borderTop: "1px solid #333" }}
         >
           <Button
-            onClick={handleCloseModal}
+            onClick={handleCloseModalWithRedirect}
             variant="outlined"
             sx={{ color: "#fff", borderColor: "#555" }}
           >
-            Close
+            Get detail Gmail
           </Button>
         </DialogActions>
       </Dialog>
