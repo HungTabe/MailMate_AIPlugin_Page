@@ -37,6 +37,7 @@ const EmailItem = ({ sender, subject, date, summary, isRead, messageId }) => {
   const [openModal, setOpenModal] = useState(false);
   const theme = useTheme();
   const location = useLocation();
+  console.log("XXXX: ", messageId);
 
   const handleOpenModal = (messageId) => {
     const params = new URLSearchParams();
