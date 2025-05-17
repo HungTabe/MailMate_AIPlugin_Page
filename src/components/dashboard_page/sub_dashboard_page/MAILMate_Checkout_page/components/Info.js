@@ -5,30 +5,28 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 
-const products = [
-  {
-    name: 'Professional plan',
-    desc: 'Monthly subscription',
-    price: '$15.00',
-  },
-  {
-    name: 'Dedicated support',
-    desc: 'Included in the Professional plan',
-    price: 'Free',
-  },
-  {
-    name: 'Hardware',
-    desc: 'Devices needed for development',
-    price: '$69.99',
-  },
-  {
-    name: 'Landing page template',
-    desc: 'License',
-    price: '$49.99',
-  },
-];
+
 
 function Info({ totalPrice }) {
+
+    const products = [
+      {
+        name: 'Professional plan',
+        desc: 'Monthly subscription',
+        price: `${totalPrice}`,
+      },
+      {
+        name: 'Dedicated support',
+        desc: 'Included in the Professional plan',
+        price: 'Free',
+      },
+      {
+        name: 'Hardware',
+        desc: 'Maintain your infracstructure',
+        price: 'Free',
+      },
+    ];
+
   return (
     <React.Fragment>
       <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>

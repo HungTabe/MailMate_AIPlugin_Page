@@ -30,21 +30,36 @@ import Review from './components/Review';
 import SitemarkIcon from './components/SitemarkIcon';
 import ColorModeIconDropdown from '../../../shared-theme/ColorModeIconDropdown';
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <AddressForm />;
-    case 1:
-      return <PaymentForm />;
-    case 2:
-      return <Review />;
-    default:
-      throw new Error('Unknown step');
-  }
-}
 export default function MAILMate_Checkout_page(props) {
     const [activeStep, setActiveStep] = React.useState(0);
+    const [planType, setPlanType] = React.useState(''); // State cho subscription
+    const [totalPrice, setTotalPrice] = React.useState('VDN 0.00'); // State cho tổng giá
+
+    const steps = ['Customer details', 'Payment details', 'Review your order'];
+    function getStepContent(step) {
+      switch (step) {
+        case 0:
+          return <AddressForm planType={planType} setPlanType={setPlanType} />;
+        case 1:
+          return <PaymentForm />;
+        case 2:
+          return <Review />;
+        default:
+          throw new Error('Unknown step');
+      }
+    }
+
+    // Cập nhật totalPrice dựa trên planType
+    React.useEffect(() => {
+      const priceMap = {
+        Free: 0,
+        Pro: 49,
+        Business: 79,
+      };
+      const price = priceMap[planType] || 0;
+      setTotalPrice(`${price.toFixed(3)} VND`);
+    }, [planType]);
+
       const handleNext = () => {
         setActiveStep(activeStep + 1);
       };
@@ -102,12 +117,12 @@ export default function MAILMate_Checkout_page(props) {
                 borderRight: { sm: "none", md: "1px solid" },
                 borderColor: { sm: "none", md: "divider" },
                 alignItems: "start",
-                pt: 2,
+                pt: 3,
                 px: 10,
                 gap: 4,
               }}
             >
-              <SitemarkIcon />
+              <SitemarkIcon sx={{fontSize: 60,}} />
               <Box
                 sx={{
                   display: "flex",
@@ -117,7 +132,7 @@ export default function MAILMate_Checkout_page(props) {
                   maxWidth: 500,
                 }}
               >
-                <Info totalPrice={activeStep >= 2 ? "$144.97" : "$134.98"} />
+                <Info totalPrice={totalPrice} />
               </Box>
             </Grid>
             <Grid
@@ -305,7 +320,7 @@ export default function MAILMate_Checkout_page(props) {
                       >
                         {activeStep === steps.length - 1
                           ? "Place order"
-                          : "Next"}
+                          : "Check out"}
                       </Button>
                     </Box>
                   </React.Fragment>
