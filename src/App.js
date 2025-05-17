@@ -13,6 +13,8 @@ import MailmateSchedulePage from './components/dashboard_page/sub_dashboard_page
 import MailmateMailPage from './components/dashboard_page/sub_dashboard_page/MAILMate_Mail_page/MAILMate_Mail_page';
 import MailmateExtraServicePage from './components/dashboard_page/sub_dashboard_page/MAILMate_ExtraService_page/MAILMate_ExtraService_page';
 import MailmateCheckoutPage from  './components/dashboard_page/sub_dashboard_page/MAILMate_Checkout_page/MAILMate_Checkout_page';
+import TransactionSuccess from './components/transaction_page/success_page/TransactionSuccess';
+import TransactionCancel from './components/transaction_page/cancel_page/TransactionCancel';
 
 
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/schedule" element={<MailmateSchedulePage />} />
           <Route path="/mail" element={<MailmateMailPage />} />
           <Route path="/extra" element={<MailmateExtraServicePage />} />
+          <Route path="/success" element={<TransactionSuccess />} />
+          <Route path="/cancel" element={<TransactionCancel />} />
         </Routes>
       </AuthProvider>
     </Router>
