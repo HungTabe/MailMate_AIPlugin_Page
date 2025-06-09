@@ -88,8 +88,7 @@ export default function MailmateBotPage(props) {
                     variant="contained"
                     startIcon={<Add />}
                     sx={{
-                      backgroundColor: "#c2e7ff",
-                      color: "#001d35",
+                      backgroundColor: 'text.secondary',
                       textTransform: "none",
                       fontWeight: 500,
                       borderRadius: "10px",

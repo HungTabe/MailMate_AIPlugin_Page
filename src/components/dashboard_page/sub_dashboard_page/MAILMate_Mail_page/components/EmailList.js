@@ -5,7 +5,7 @@ import EmailItem from "./EmailItem";
 const StyledEmailList = styled(Box)(({ theme }) => ({
   flex: 1,
   overflowY: "auto",
-  backgroundColor: "#000", // Dark background
+  backgroundColor: theme.palette.background.default,
   color: "#fff",
   padding: theme.spacing(2),
   height: "100vh",
@@ -18,7 +18,7 @@ const EmailList = ({ emails }) => (
       sx={{
         mb: 2,
         fontWeight: "bold",
-        color: "#fff",
+        color: "black",
       }}
     >
       Mail Inbox

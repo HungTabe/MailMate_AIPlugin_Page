@@ -66,7 +66,7 @@ export default function MainGrid() {
             </Typography>
             <Typography
               variant="h4"
-              sx={{ color: 'white', mb: 5, fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+              sx={{ color: 'black', mb: 5, fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               How can I assist you today?
             </Typography>

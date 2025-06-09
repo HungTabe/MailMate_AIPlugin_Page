@@ -60,13 +60,13 @@ export default function MainGrid() {
           <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center',  mt: 10 }}>
             <Typography
               variant="h2"
-              sx={{ color: 'white', fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
+              sx={{color: 'text.primary', fontFamily: 'Roboto, sans-serif', fontWeight: 400 }}
             >
               Wish all the best come to you, Mate.
             </Typography>
             <Typography
               variant="h4"
-              sx={{ color: 'white', mb: 5, fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
+              sx={{ color: 'black', mb: 5, fontFamily: 'Roboto, sans-serif', fontWeight: 300 }}
             >
               How can I assist you today?
             </Typography>

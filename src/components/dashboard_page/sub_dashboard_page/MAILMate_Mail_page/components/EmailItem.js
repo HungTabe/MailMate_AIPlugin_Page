@@ -65,14 +65,14 @@ const EmailItem = ({ sender, subject, date, summary, isRead, messageId }) => {
           p: 2,
           mb: 1,
           cursor: "pointer",
-          backgroundColor: isRead ? "#121212" : "#1f1f1f",
+          backgroundColor: isRead ? "#121212" : "#9f9b9b",
           borderLeft: isRead
             ? "4px solid transparent"
             : `4px solid ${theme.palette.primary.main}`,
           color: "#fff",
           transition: "all 0.2s",
           "&:hover": {
-            backgroundColor: "#2a2a2a",
+            backgroundColor: "#6f6f6f",
           },
         }}
         onMouseEnter={() => setIsHovered(true)}
@@ -100,7 +100,7 @@ const EmailItem = ({ sender, subject, date, summary, isRead, messageId }) => {
               {subject}
             </Typography>
             {isHovered && (
-              <Typography variant="body2" color="secondary" Wrap
+              <Typography variant="body2" color="white" Wrap
               sx={{
                 py: 2,
                 fontSize: "Bold",
@@ -121,7 +121,7 @@ const EmailItem = ({ sender, subject, date, summary, isRead, messageId }) => {
       >
         <DialogTitle
           sx={{
-            backgroundColor: "#000",
+            backgroundColor: theme.palette.background.default,
             color: "#fff",
             display: "flex",
             justifyContent: "space-between",

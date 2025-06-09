@@ -5,7 +5,7 @@ import { listItemStyles, selectedListItemStyles, labelListItemStyles, iconStyles
 
 const StyledSidebar = styled(Box)(({ theme }) => ({
   width: '200px',
-  backgroundColor: 'black',
+  backgroundColor: theme.palette.background.default,
   borderRight: '1px solid',
   borderColor: theme.palette.divider,
   height: '100vh',
@@ -35,7 +35,6 @@ const EmailSidebar = () => (
         startIcon={<Add />}
         sx={{
           backgroundColor: '#c2e7ff',
-          color: '#001d35',
           textTransform: 'none',
           fontWeight: 500,
           borderRadius: '10px',
